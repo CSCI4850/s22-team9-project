@@ -1,9 +1,14 @@
 # s22-team9-project
 Group Members:
+
 Emily Musselman
+
 Evan Kubick
+
 Jason Miller
+
 Joseph May
+
 Louis Lizzadro
 
 This is a project attempting to use neural networks to make music. 
@@ -42,8 +47,7 @@ The following steps are how we downloaded the top pop songs for 2021 off of yout
 4. Use the YouTube window and search for the songs you wish, just as if you were using YouTube and not the converter tool. 
 
 5. Select the video you want. 
-
-        It is imporant to note here that video slection can affect network performance. If you select Music Videos or other video versions that are not just audio of the song, extra information will be captured in the conversion process. For example, Michael Jackson's Thriller has a runtime of 3 minutes and 22 seconds, but the music video has a runtime of 13 minutes 43 seconds. If you were to download and convert the music video there will be 10 minutes and 35 seconds of unnecessary information endoded to the MIDI file. Ensure you are downloading good quality files for your purpose if you cannot get the officia audio files, or the inputs to your network will contain junk information and lower your performance. 
+It is imporant to note here that video slection can affect network performance. If you select Music Videos or other video versions that are not just audio of the song, extra information will be captured in the conversion process. For example, Michael Jackson's Thriller has a runtime of 3 minutes and 22 seconds, but the music video has a runtime of 13 minutes 43 seconds. If you were to download and convert the music video there will be 10 minutes and 35 seconds of unnecessary information endoded to the MIDI file. Ensure you are downloading good quality files for your purpose if you cannot get the officia audio files, or the inputs to your network will contain junk information and lower your performance. 
         
 6. Click the download button. -- You will be offered a few different options for how to download the file such as mp3, mp4, and webm. You may select the best file type for your task, for this tutorial songs were downloaded as MP4s. 
 
