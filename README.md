@@ -1,22 +1,32 @@
 # s22-team9-project
 Group Members:
 
-Emily Musselman
+1. Emily Musselman
+2. Evan Kubick
+3. Jason Miller
+4. Joseph May
+5. Louis Lizzadro
 
-Evan Kubick
 
-Jason Miller
-
-Joseph May
-
-Louis Lizzadro
-
-This is a project attempting to use neural networks to make music. 
 
 Demo Section:
 
+Implementation
 
-Creating a dataset & converting files to MIDI:
+We plan to use Long Short Term Memory recurrant neural network and Generative Adverserial neural networks to generate music. After tuning and standardizing hyperparameters we will compare network performance, and ensure reproducability. 
+
+To install the required libraries open a terminal and input the following commands:
+
+1. sudo apt install -y fluidsynth
+
+2. pip install --upgrade pyfluidsynth
+
+3. pip install pretty_midi
+
+Further help and materials may be found in the reference section
+
+
+Creating your own dataset & converting files to MIDI (optional):
 
 To begin with, this tutorial assumes songs will be downloaded from youtube as MP4s, converted to MP3s and then from MP3s to MIDI files. This tutorial uses the MiniTool Video Converter Tool and the MP3 to Midi website, which can respectively be found here https://videoconvert.minitool.com/ and here https://anyconv.com/mp3-to-midi-converter/
 
@@ -60,4 +70,40 @@ It is imporant to note here that video slection can affect network performance. 
 10. Upload all the files you wish to convert, and select to convert to MIDI filetype, and hit the convert button. -- It might take some time to convert multiple files to MDID, and occasionally the website has trouble handling large batches of file conversions. We found that batches of 20 files at a time worked best. 
 
 11. At this point you should have MIDI files of your choosing and can use those as inputs for your music generation network. 
+
+
+
+
+
+
+
+References
+
+Jupyterlab - where we developed and tested out code
+1. overview - https://jupyterlab.readthedocs.io/en/stable/getting_started/overview.html
+2. Instillation & setup guide - https://www.tutorialspoint.com/jupyter/jupyterlab_installation_and_getting_started.htm
+3. General documentaion - https://jupyterlab.readthedocs.io/en/stable/index.html
+
+
+Core libraries for the project
+1. Tensorflow
+        install - https://www.tensorflow.org/install
+        introduction - https://www.tensorflow.org/learn
+2. Numpy
+        install - https://numpy.org/install/
+        homepage - https://numpy.org/
+3. Pandas
+        install - https://pandas.pydata.org/pandas-docs/version/0.23/install.html
+        homepage - https://pandas.pydata.org/
+6. Fluidsynth
+        install - https://github.com/FluidSynth/fluidsynth/releases
+        homepage - https://www.fluidsynth.org/ 
+8. Pretty_midi
+        install - https://pypi.org/project/pretty_midi/
+        homepage - http://craffel.github.io/pretty-midi/
+             
+
+Tools to download songs and convert to MIDI filetype
+1. Minitool Video Converter - https://videoconvert.minitool.com/
+2. Anyconv.com - https://anyconv.com/mp3-to-midi-converter/
 
