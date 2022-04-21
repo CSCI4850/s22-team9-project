@@ -1,63 +1,209 @@
-# s22-team9-project
-Group Members:
-
-Emily Musselman
-
-Evan Kubick
-
-Jason Miller
-
-Joseph May
-
-Louis Lizzadro
-
-This is a project attempting to use neural networks to make music. 
-
-Demo Section:
-
-
-Creating a dataset & converting files to MIDI:
-
-To begin with, this tutorial assumes songs will be downloaded from youtube as MP4s, converted to MP3s and then from MP3s to MIDI files. This tutorial uses the MiniTool Video Converter Tool and the MP3 to Midi website, which can respectively be found here https://videoconvert.minitool.com/ and here https://anyconv.com/mp3-to-midi-converter/
-
-If the process outlined here is not working, or is not feasable for you there are other ways to convert a file to MIDI type. For instance, if you have to music sheet for a song you can convert that information to MIDI filetype. These solutions are not explored in this demo, and will require research on your part should you wish to employ those options. Outside of free solutions there are a few music conversion tools you may choose from, which can take the form of downloadable software or subscription based web-services. Scan Score offers conveinant MIDI conversion and, as of writing this tutorial, a comprehensive free trial which you can use to do all your file conversions or test to see if that is a tool you would be willing to pay for. It can be found here https://scan-score.com/en/. This tutorial uses an entirely free process described below.  
-
-If you want to get your music generating network up and running immediately there are a number of MIDI libraries out there which you may use for free to provide inputs and start training your network right away. The best libraries we were able to find were:
-
-1. Bitmidi - https://bitmidi.com/
-2. The Midi Archive - http://home.claranet.nl/users/fpieters/midipage.html
-3. Partners In Rhyme - https://www.partnersinrhyme.com/midi/index.shtml
-4. Instant Drum Patterns  - http://www.fivepinpress.com/drum_patterns.html
-5. Free Midi Drum Loops -  https://groovemonkee.com/pages/free-midi-loops
-6. Blues and Rock-n-Roll Drum Beats - https://www.prosonic-studios.com/midi-drum-beats/blues-and-rock-n-roll
-7. Metal Midi - http://metal-midi.grahamdowney.com/midi.html 
-8. Midiworld - https://www.midiworld.com/
-9. Carlo's midi - https://www.cprato.com/en/midi/all
-10. Nonstop2k - https://www.nonstop2k.com/?sid=4be521bd9370621c0c83c9204bd4dcba
-
-Together these libraries offer a solid basis of midi files to begin training your network for music generation. If the files in those libraries do not fit your problem, or you have need for specific songs, you can follow these steps to convert files to MIDI off of youtube. 
-
-The following steps are how we downloaded the top pop songs for 2021 off of youtube and converted them to MIDI format. 
-1. Download the MiniTool Video Converter. As of writing this tutorial, it is available for free at  https://videoconvert.minitool.com/ This is the tool we will use to download videos off of YouTube. It is a very easy tool to use, but please keep in mind that version updates to the tool, or alterations to terms and services may outdate this information.
-
-2. Open the MiniTool Video Converter 
-
-3. Click the Video Download tab -- By default this tab will open up a YouTube window within the converter tool, if the files you wish to download are on another website, you can change the URL and navigate to that website.
-
-4. Use the YouTube window and search for the songs you wish, just as if you were using YouTube and not the converter tool. 
-
-5. Select the video you want. 
-It is imporant to note here that video slection can affect network performance. If you select Music Videos or other video versions that are not just audio of the song, extra information will be captured in the conversion process. For example, Michael Jackson's Thriller has a runtime of 3 minutes and 22 seconds, but the music video has a runtime of 13 minutes 43 seconds. If you were to download and convert the music video there will be 10 minutes and 35 seconds of unnecessary information endoded to the MIDI file. Ensure you are downloading good quality files for your purpose if you cannot get the officia audio files, or the inputs to your network will contain junk information and lower your performance. 
-        
-6. Click the download button. -- You will be offered a few different options for how to download the file such as mp3, mp4, and webm. You may select the best file type for your task, for this tutorial songs were downloaded as MP4s. 
-
-7. Once you have downloaded all the songs you want, go to the video convert tab. Upload all the files you wish to convert.
-
-8. Make sure all files are being converted to MP3s and the quality is set to high quality conversion. Then hit the convert all button.
-
-9. Once all files have been converted to MP3s, go to the MP3 to MIDI converter website https://anyconv.com/mp3-to-midi-converter/, which will convert files to MIDI for free. 
-
-10. Upload all the files you wish to convert, and select to convert to MIDI filetype, and hit the convert button. -- It might take some time to convert multiple files to MDID, and occasionally the website has trouble handling large batches of file conversions. We found that batches of 20 files at a time worked best. 
-
-11. At this point you should have MIDI files of your choosing and can use those as inputs for your music generation network. 
-
+{
+ "cells": [
+  {
+   "cell_type": "markdown",
+   "id": "68773717-1983-4c8c-a933-afad924835cb",
+   "metadata": {},
+   "source": [
+    "# Readme- s22-team9-project - Alcove -- Music Generation comparison between LSTM and GAN architectures"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ba1d63ce-7e6f-461e-80aa-b0fc3b25e7b7",
+   "metadata": {},
+   "source": [
+    "   "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "d8ffaae3-66ce-4e49-835d-34527112f1f2",
+   "metadata": {},
+   "source": [
+    "## Motivation \n",
+    "\n",
+    "We have made two different neural network architectures, a Long-Short-Term-Memoery (LSTM) network and a generative adverserial (GAN) network. We will have each model process musical instrument digital interface (MIDI) files and generate music snippets 30 seconds in length. After tweaking and optimizing the models to the best of our abilities, we will compare the results of each model and observe which model performs better at generating music. \n",
+    "\n",
+    "___"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a29a2bec-42e6-46cf-aeed-ed13e75c5761",
+   "metadata": {},
+   "source": [
+    "### Datasets\n",
+    "\n",
+    "The data used for each model can either be found in the Datasets folder in the github, or pulled from other web sources using some code snippets which are included in the pretinent files. The GAN network "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "f539e5ff-dac5-4fb7-af65-044d4421966f",
+   "metadata": {},
+   "source": [
+    "_______"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "b5435e9b-1fe2-43db-93a0-314417c6c1b0",
+   "metadata": {},
+   "source": [
+    "### Core tools and dependencies"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "fa65a7ea-44df-4830-9c66-b7efbbfd981d",
+   "metadata": {},
+   "source": [
+    "Jupyterlab – web based user interface\n",
+    "1. Homepage - https://jupyter.org/\n",
+    "2. Installation -https://jupyter.org/install\n",
+    "3. Documentation - https://docs.jupyter.org/en/latest/\n",
+    "\n",
+    "Tensorflow – build and train neural networks​\n",
+    "1. Homepage - https://www.tensorflow.org/\n",
+    "2. Installation - https://www.tensorflow.org/install\n",
+    "3. Documentation - https://www.tensorflow.org/api_docs/\n",
+    "\n",
+    "Numpy – Array/Vector/Matrices handling and operations​\n",
+    "1. Homepage - https://numpy.org/\n",
+    "2. Installation - https://numpy.org/install/\n",
+    "3. Documentation - https://numpy.org/doc/\n",
+    "\n",
+    "Pandas – data analysis and manipulation​\n",
+    "1. Homepage - https://pandas.pydata.org/\n",
+    "2. Installation - https://pandas.pydata.org/pandas-docs/version/0.23/install.html\n",
+    "3. Documentation - https://pandas.pydata.org/docs/\n",
+    "\n",
+    "Fluidsynth – music synthesizer for midi files​\n",
+    "1. Homepage - https://www.fluidsynth.org/\n",
+    "2. Installation - https://github.com/FluidSynth/fluidsynth/releases\n",
+    "3. Documentation -  https://www.fluidsynth.org/documentation/\n",
+    "\n",
+    "Pretty_midi – various utilities for handling midi files for formatting & modification\n",
+    "1. Homepage - http://craffel.github.io/pretty-midi/#\n",
+    "2. Installation - https://pypi.org/project/pretty_midi/\n",
+    "3. Documentation - http://craffel.github.io/pretty-midi/\n",
+    "\n",
+    "Image to Midi conversion\n",
+    "\n",
+    "1. Code that inspired out GAN network approach for music generation - https://github.com/mathigatti/midi2img\n",
+    "2. Contains helper functions and othe information to turn midi files to images for processing\n",
+    "\n"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "11b46afa-14e8-45ca-a311-6eb90056bc41",
+   "metadata": {},
+   "source": [
+    "### Special installation requirements (LSTM Network)\n",
+    "\n",
+    "To install the required libraries for the LSTM network open a terminal and input the following commands:\n",
+    "\n",
+    "sudo apt install -y fluidsynth\n",
+    "\n",
+    "pip install --upgrade pyfluidsynth\n",
+    "\n",
+    "pip install pretty_midi"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a0b3d353-8dfe-49c3-af61-c5e46539ce28",
+   "metadata": {},
+   "source": [
+    "# Demo "
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "5dea3399-4d0c-414b-a137-1171882aff83",
+   "metadata": {},
+   "source": [
+    "## LSTM Network"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "284ba6f2-fbed-4cda-9322-03f4609f44e6",
+   "metadata": {},
+   "source": [
+    "### Preprocessing Data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "32fadf52-8d82-42da-bd0c-bde08a5bf78e",
+   "metadata": {},
+   "source": [
+    "### Making the model"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "ec191c3a-192b-4787-852d-f82ce745a4a9",
+   "metadata": {},
+   "source": [
+    "## GAN Network"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "3f86302c-34b2-47e1-9779-2c4568fd5a02",
+   "metadata": {},
+   "source": [
+    "### Preprocessing Data"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "9c96c45a-54d8-4ae4-a478-0739d098ef1e",
+   "metadata": {},
+   "source": [
+    "### Making the model"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "8bde4d52-fa3f-4a23-b6c1-d78994b69983",
+   "metadata": {},
+   "source": [
+    "### Results Comparison"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a9601b7e-5c7a-4a25-9241-799c82377bd7",
+   "metadata": {},
+   "source": [
+    "## Sample outputs"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3 (ipykernel)",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.9.7"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
