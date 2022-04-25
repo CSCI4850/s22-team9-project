@@ -1,6 +1,6 @@
 Readme- s22-team9-project Alcove  
  
-This is a project utilizing Neural Networks  Music Generation comparison between LSTM and GAN architectures. 
+This is a project utilizing two different Neural Networks architectures, Long-Short-Term-Memory (LSTM) and Generative Adversarial (GAN), to create music. After building and training each model, the results of both models were compared primarily through loss and accuracy ratings, but also in number of parameters (neural units), and overal song quality to be able to compare which architecture LSTM or GAN is better at generating music. 
 
 Motivation:
 We have made two different neural network architectures, a Long-Short-Term-Memoery (LSTM) network and a generative adverserial (GAN) network.
@@ -50,6 +50,7 @@ Image to Midi conversion
 
 LSTM Architecture Inspiration 
 1. Keras Tutrotial - https://www.tensorflow.org/tutorials/audio/music_generation
+
 
 Special installation requirements (LSTM Network:
 
