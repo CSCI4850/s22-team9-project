@@ -52,7 +52,7 @@ LSTM Architecture Inspiration
 1. Keras Tutrotial - https://www.tensorflow.org/tutorials/audio/music_generation
 
 
-Special installation requirements (LSTM Network:
+Special installation requirements (LSTM Network):
 
 To install the required libraries for the LSTM network open a terminal and input the following commands:
 
@@ -61,3 +61,9 @@ sudo apt install -y fluidsynth
 pip install --upgrade pyfluidsynth
 
 pip install pretty_midi
+
+Special installation requirements (GAN Network):
+
+To install the required libraries for the GAN network open a terminal and input the following commands:
+
+pip install music21
